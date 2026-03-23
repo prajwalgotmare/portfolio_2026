@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import ProjectCard from "@/components/ProjectCard";
 import ContactCard from "@/components/ContactCard";
 import Reveal from "@/components/Reveal";
+import SocialLogo from "@/components/SocialLogo";
 
 const portrait = "/images/portrait.jpg";
 const linkedinSessionThumb = "/images/linkedin-session-thumb.jpg";
@@ -13,20 +14,45 @@ const shyenaLogo = "/logos/shyena.png";
 
 const highlights = [
   {
-    value: "6.5+",
-    label: "Years in applied AI"
+    kicker: "Experience",
+    value: "7+ years",
+    label: "LLM · NLP · ML in production",
+    valueClassName: "stat-value"
   },
   {
-    value: "Production",
-    label: "LLM, NLP, and ML systems shipped"
+    kicker: "Shipping",
+    value: "10+ production systems",
+    label: "Clinical trials, SEO, forecasting, Teaching Platform and many more",
+    valueClassName: "card-title"
   },
   {
-    value: "LLM + AWS",
-    label: "LLM workflows and AWS delivery"
+    kicker: "Stack",
+    value: "LLM · AWS · LangGraph",
+    label: "OpenAI · LangChain · FastAPI · SageMaker",
+    valueClassName: "card-title"
   },
   {
-    value: "10-15%",
-    label: "+10-15% forecast accuracy"
+    kicker: "Impact",
+    value: "26k+ products · +15% accuracy",
+    label: "Across SEO, forecasting, and data pipelines",
+    valueClassName: "card-title"
+  }
+];
+
+const heroLinks = [
+  {
+    label: "GitHub",
+    href: "https://github.com/prajwalgotmare",
+    icon: "github" as const,
+    hoverClass:
+      "hover:-translate-y-0.5 hover:border-slate-300 hover:bg-slate-50"
+  },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/prajwalgotmare/",
+    icon: "linkedin" as const,
+    hoverClass:
+      "hover:-translate-y-0.5 hover:border-blue-200 hover:bg-blue-50"
   }
 ];
 
@@ -318,27 +344,52 @@ export default function Home() {
             <div className="grid gap-8 p-7 sm:p-8 lg:grid-cols-[minmax(0,1fr)_320px] lg:items-center lg:gap-x-10 lg:gap-y-7 lg:p-10">
               <Reveal direction="left">
                 <div>
-                  <p className="eyebrow">AI Engineer Portfolio</p>
-                  <h1 className="hero-title mt-4">
+                  <div className="inline-flex items-center gap-2 rounded-full border border-emerald-100 bg-emerald-50 px-3 py-1.5 text-xs font-medium uppercase tracking-[0.12em] text-emerald-700">
+                    <span className="h-2 w-2 rounded-full bg-emerald-500" />
+                    Open to opportunities
+                  </div>
+
+                  <h1 className="hero-title">
                     Prajwal Gotmare
                   </h1>
                   <p className="mt-3 text-xl font-medium leading-7 text-slate-700">
-                    AI Engineer
-                  </p>
-                  <p className="body-primary mt-5 max-w-xl">
-                    I build production-grade AI systems that deliver real
-                    business outcomes.
+                    AI Engineer · LLM Systems · Production ML
                   </p>
 
-                  <div className="mt-6 flex flex-wrap gap-3">
+                  <div className="mt-4 flex items-center gap-3">
+                    {heroLinks.map((link) => (
+                      <a
+                        key={link.label}
+                        href={link.href}
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        aria-label={link.label}
+                        title={link.label}
+                        className={`inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white transition duration-200 ${link.hoverClass}`}
+                      >
+                        <SocialLogo icon={link.icon} className="h-5 w-5" />
+                      </a>
+                    ))}
+                  </div>
+
+                  <p className="body-primary mt-4 max-w-2xl">
+                    <span className="block">
+                      I build LLM systems that ship to production.
+                    </span>
+                    <span className="mt-1 block text-slate-500">
+                      Pipelines · Forecasting · AI Platforms · AWS
+                    </span>
+                  </p>
+
+                  <div className="mt-5 flex flex-wrap gap-3">
                     <a
                       href="#projects"
                       className="button-primary"
                     >
-                      View case studies
+                      See My Work
                     </a>
                     <a
-                      href="#contact"
+                      href="mailto:prajwalvgotmare@gmail.com"
                       className="button-secondary"
                     >
                       Contact
@@ -348,12 +399,14 @@ export default function Home() {
               </Reveal>
 
               <Reveal direction="right" delay={120}>
-                <div className="mx-auto w-full max-w-[320px] overflow-hidden rounded-[1.75rem] border border-slate-200 bg-slate-100 shadow-soft">
-                  <div className="aspect-[4/5]">
+                <div className="mx-auto w-full max-w-[320px] overflow-hidden rounded-[1.85rem] border border-blue-200/80 bg-gradient-to-br from-blue-50 via-white to-slate-100 p-2.5 shadow-soft">
+                  <div className="relative aspect-[4/5] overflow-hidden rounded-[1.45rem] border border-blue-100/80 bg-slate-100">
                     <Image
                       src={portrait}
                       alt="Portrait of Prajwal Gotmare"
-                      className="h-full w-full object-cover"
+                      fill
+                      sizes="(min-width: 1024px) 320px, 100vw"
+                      className="object-cover"
                       priority
                     />
                   </div>
@@ -361,23 +414,42 @@ export default function Home() {
               </Reveal>
 
               <Reveal className="lg:col-span-2" delay={180}>
-                <div className="rounded-[1.75rem] border border-blue-100 bg-blue-50/80 p-5 sm:p-6">
-                  <p className="eyebrow text-blue-700">
-                    Key highlights
-                  </p>
+                <div className="rounded-[1.75rem] border border-blue-100/80 bg-gradient-to-r from-blue-50/90 via-slate-50 to-blue-50/80 p-5 sm:p-6">
+                  <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+                    <p className="eyebrow text-blue-700">
+                      Key highlights
+                    </p>
+                    <p className="body-secondary text-slate-500">
+                      Quick signals from shipped work.
+                    </p>
+                  </div>
 
-                  <div className="mt-4 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
-                    {highlights.map((item) => (
+                  <div className="mt-4 grid gap-3 sm:auto-rows-fr sm:grid-cols-2 xl:grid-cols-4">
+                    {highlights.map((item, index) => (
                       <div
                         key={item.label}
-                        className="rounded-3xl border border-white/80 bg-white/85 p-4"
+                        className="group relative overflow-hidden rounded-[1.5rem] border border-white/90 bg-white/95 p-5 shadow-[0_18px_40px_-34px_rgba(15,23,42,0.35)] transition duration-200 hover:-translate-y-1 hover:border-blue-200"
                       >
-                        <p className="text-xl font-semibold leading-7 text-slate-950">
-                          {item.value}
-                        </p>
-                        <p className="body-secondary mt-2">
-                          {item.label}
-                        </p>
+                        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue-300 to-transparent" />
+                        <div className="absolute -right-5 -top-8 h-20 w-20 rounded-full bg-blue-100/70 blur-2xl" />
+
+                        <div className="relative flex h-full flex-col">
+                          <div className="flex items-center justify-between gap-3">
+                            <p className="meta-label text-blue-600">
+                              {item.kicker}
+                            </p>
+                            <span className="inline-flex h-7 min-w-7 items-center justify-center rounded-full border border-blue-100 bg-blue-50 text-xs font-semibold leading-5 text-blue-300">
+                              0{index + 1}
+                            </span>
+                          </div>
+
+                          <p className={`${item.valueClassName} mt-4 max-w-[16ch] text-slate-950`}>
+                            {item.value}
+                          </p>
+                          <p className="body-secondary mt-2 max-w-[22ch] text-slate-700">
+                            {item.label}
+                          </p>
+                        </div>
                       </div>
                     ))}
                   </div>

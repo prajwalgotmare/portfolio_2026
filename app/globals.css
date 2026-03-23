@@ -105,6 +105,10 @@ body {
     @apply text-xl font-semibold leading-7 text-slate-950;
   }
 
+  .stat-value {
+    @apply text-[28px] font-semibold leading-8 text-slate-950;
+  }
+
   .body-primary {
     @apply text-base leading-7 text-slate-600;
   }
