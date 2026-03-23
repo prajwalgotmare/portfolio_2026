@@ -3,12 +3,13 @@ import Navbar from "@/components/Navbar";
 import ProjectCard from "@/components/ProjectCard";
 import ContactCard from "@/components/ContactCard";
 import Reveal from "@/components/Reveal";
-import portrait from "../my_image.jpg";
-import linkedinSessionThumb from "../linkedin_session_thumb.jpg";
-import aithinkersLogo from "../org_aithinkers.png";
-import klizerLogo from "../org_klizer_icon.png";
-import technoExponentLogo from "../org_technoexponent.png";
-import shyenaLogo from "../org_shyena.png";
+
+const portrait = "/images/portrait.jpg";
+const linkedinSessionThumb = "/images/linkedin-session-thumb.jpg";
+const aithinkersLogo = "/logos/aithinkers.png";
+const klizerLogo = "/logos/klizer-icon.png";
+const technoExponentLogo = "/logos/techno-exponent.png";
+const shyenaLogo = "/logos/shyena.png";
 
 const highlights = [
   {

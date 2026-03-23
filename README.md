@@ -2,6 +2,17 @@
 
 Minimal personal portfolio built with Next.js App Router and Tailwind CSS.
 
+## Project structure
+
+```text
+app/                  App Router pages and global styles
+components/           Reusable UI components
+public/images/        Portrait and content thumbnails
+public/logos/         Company logos
+public/documents/     Static downloadable documents
+archive/legacy-assets/ Older or unused source assets kept out of the main app flow
+```
+
 ## Local setup
 
 1. Install dependencies:
