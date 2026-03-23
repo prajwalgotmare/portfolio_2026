@@ -6,7 +6,7 @@ const links = [
 ];
 
 const resumeHref =
-  "https://drive.google.com/file/d/1RSM2TDNDuXPOauqMp-6ItWpVjd_zNGQC/view?usp=drive_link";
+  "https://drive.google.com/file/d/10aW63rwmPaOjurI7DeWmCNEQQMPrylbZ/view?usp=sharing";
 
 export default function Navbar() {
   return (
