@@ -7,7 +7,8 @@ const links = [
   { href: "#contact", label: "Contact" }
 ];
 
-const resumeHref = "/documents/prajwal-gotmare-resume.pdf";
+const resumeHref =
+  "https://drive.google.com/file/d/1tIJb7_NcfXfKQ4lcL6jfjru9HxmWSD_3/view?usp=sharing";
 
 export default function Navbar() {
   return (
