@@ -1,12 +1,13 @@
 const links = [
   { href: "#experience", label: "Experience" },
+  { href: "#skills", label: "Skills" },
+  { href: "#education", label: "Education" },
   { href: "#projects", label: "Projects" },
   { href: "#writing", label: "Writing & Talks" },
   { href: "#contact", label: "Contact" }
 ];
 
-const resumeHref =
-  "https://drive.google.com/file/d/10aW63rwmPaOjurI7DeWmCNEQQMPrylbZ/view?usp=sharing";
+const resumeHref = "/documents/prajwal-gotmare-resume.pdf";
 
 export default function Navbar() {
   return (

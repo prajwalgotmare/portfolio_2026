@@ -10,9 +10,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Prajwal Gotmare | AI Engineer",
+  title: "Prajwal Gotmare | Senior AI Engineer",
   description:
-    "Portfolio website for Prajwal Gotmare, an AI Engineer building scalable AI systems with LLMs, data pipelines, and cloud infrastructure."
+    "Portfolio for Prajwal Gotmare, a Senior AI Engineer building production LLM applications, agentic workflows, RAG systems, and cloud-native AI platforms."
 };
 
 export default function RootLayout({

@@ -15,14 +15,14 @@ const shyenaLogo = "/logos/shyena.png";
 const highlights = [
   {
     kicker: "Experience",
-    value: "7+ years",
-    label: "LLM · NLP · ML in production",
+    value: "4.5+ years professional",
+    label: "7-year AI journey · LLM · NLP · ML",
     valueClassName: "stat-value"
   },
   {
     kicker: "Shipping",
     value: "10+ production systems",
-    label: "Clinical trials, SEO, forecasting, Teaching Platform and many more",
+    label: "Clinical trials, SEO, forecasting, teaching platform, and more",
     valueClassName: "card-title"
   },
   {
@@ -61,12 +61,20 @@ const projects = [
     title: "Clinical Trials Data Pipeline",
     company: "AIThinkers x Decentrialz",
     problem:
-      "Clinical trial data was fragmented and hard to search.",
+      "ClinicalTrials.gov data was hard to ingest, normalize, and search at scale.",
     built:
-      "Built AWS pipeline with AI enrichment and OpenSearch.",
+      "Built an AWS pipeline with AI-assisted condition normalization, therapeutic classification, and eligibility extraction.",
     impact:
-      "Delivered cleaner data and faster retrieval in production.",
-    stack: ["Python", "AWS", "Lambda", "ECS", "OpenSearch"],
+      "Delivered cleaner trial data and faster retrieval in production.",
+    stack: [
+      "Python",
+      "API Gateway",
+      "Lambda",
+      "ECS",
+      "S3",
+      "DynamoDB",
+      "OpenSearch"
+    ],
     links: [
       {
         label: "ClinicalTrials.gov",
@@ -80,14 +88,14 @@ const projects = [
   },
   {
     title: "AI SEO Platform",
-    company: "Virginia Tile",
+    company: "Virginia Tile · AIThinkers",
     problem:
-      "26k+ products needed SEO content without manual bottlenecks.",
+      "26k+ products needed SEO descriptions and FAQs without manual bottlenecks.",
     built:
-      "Built FastAPI + React platform with OpenAI and Gemini.",
+      "Built a FastAPI + React/TypeScript platform with OpenAI generation and Gemini quality scoring.",
     impact:
-      "Scaled consistent product and FAQ content across the catalog.",
-    stack: ["FastAPI", "React", "OpenAI", "Gemini", "AWS"],
+      "Scaled consistent product and FAQ content across the catalog on AWS.",
+    stack: ["Python", "FastAPI", "React", "TypeScript", "OpenAI", "Gemini", "AWS"],
     links: [
       {
         label: "Virginia Tile",
@@ -101,10 +109,10 @@ const projects = [
     problem:
       "1000+ SKUs lacked unified demand visibility across ERP and ecommerce.",
     built:
-      "Built SageMaker forecasting platform with XGBoost and FastAPI.",
+      "Built SageMaker XGBoost forecasting with Airbyte ETL from Prophet21 and Magento into PostgreSQL, plus FastAPI KPIs and an OpenAI supply-chain chatbot.",
     impact:
-      "+10-15% forecast accuracy and stronger inventory decisions.",
-    stack: ["XGBoost", "SageMaker", "Airbyte", "PostgreSQL", "FastAPI"],
+      "+10–15% forecast accuracy and stronger inventory decisions.",
+    stack: ["XGBoost", "SageMaker", "Airbyte", "PostgreSQL", "FastAPI", "OpenAI"],
     links: [
       {
         label: "Marysville Marine",
@@ -115,13 +123,30 @@ const projects = [
         href: "https://www.klizer.com/"
       }
     ]
+  },
+  {
+    title: "Sanskrit Teaching Platform",
+    company: "Aanantya · Techno Exponent",
+    problem:
+      "Learners needed conversational Sanskrit tutoring beyond static lessons.",
+    built:
+      "Engineered an OpenAI-powered tutoring chatbot in Python for conversational learning.",
+    impact:
+      "Enabled tutoring across 15+ languages and boosted engagement and accessibility.",
+    stack: ["Python", "OpenAI", "NLP"],
+    links: [
+      {
+        label: "Techno Exponent",
+        href: "https://www.technoexponent.com/"
+      }
+    ]
   }
 ];
 
 const experience = [
   {
-    yearLabel: "2025 - Now",
-    period: "May 2025 - Present",
+    yearLabel: "2025 - 2026",
+    period: "June 2025 - June 2026",
     role: "Senior Data Scientist",
     company: "AIThinkers",
     companyHref: "https://www.aithinkers.com/",
@@ -129,8 +154,8 @@ const experience = [
     logoAlt: "AIThinkers logo",
     logoFrameClassName: "h-16 w-16",
     points: [
-      "Own end-to-end delivery from architecture to production.",
-      "Lead AWS implementations that improve data quality and reliability."
+      "Built an AI SEO content platform for Virginia Tile (FastAPI, React/TypeScript, OpenAI, Gemini) processing 26k+ products on AWS.",
+      "Designed a ClinicalTrials.gov AWS pipeline (API Gateway, Lambda, ECS, S3, DynamoDB, OpenSearch) with AI-assisted enrichment."
     ]
   },
   {
@@ -143,13 +168,13 @@ const experience = [
     logoAlt: "Klizer logo",
     logoFrameClassName: "h-14 w-14",
     points: [
-      "Owned AI delivery for forecasting and assistant workflows.",
-      "Connected models, backend services, and business data into usable systems."
+      "Built demand forecasting for 1000+ SKUs on SageMaker with XGBoost, improving forecast accuracy by 10–15%.",
+      "Shipped Airbyte ETL (Prophet21, Magento → PostgreSQL), FastAPI inventory KPIs, and an OpenAI supply-chain chatbot."
     ]
   },
   {
     yearLabel: "2023 - 2024",
-    period: "May 2023 - May 2024",
+    period: "May 2023 - April 2024",
     role: "Senior Software Engineer",
     company: "Techno Exponent",
     companyHref: "https://www.technoexponent.com/",
@@ -157,13 +182,13 @@ const experience = [
     logoAlt: "Techno Exponent logo",
     logoFrameClassName: "h-14 w-14",
     points: [
-      "Built multilingual tutoring products with AI-assisted workflows.",
-      "Expanded reach to 15+ languages with cleaner integrations."
+      "Built an AI Sanskrit tutoring chatbot (Aanantya) with the OpenAI API and Python.",
+      "Enabled conversational learning across 15+ languages and improved global accessibility."
     ]
   },
   {
-    yearLabel: "2019 - 2023",
-    period: "Apr 2019 - Jan 2023",
+    yearLabel: "2021 - 2022",
+    period: "August 2021 - October 2022",
     role: "Data Scientist",
     company: "Shyena Tech Yarns",
     companyHref: "https://shyenatechyarns.com/",
@@ -171,11 +196,80 @@ const experience = [
     logoAlt: "Shyena Tech Yarns logo",
     logoFrameClassName: "h-11 w-24",
     points: [
-      "Built NLP logistics products, including an Alexa freight-rate experience.",
-      "Raised engagement 25% in three months."
+      "Developed an Alexa skill for shipping that delivered container freight rates using NLP and ML.",
+      "Increased user engagement by 25% in three months with Alexa Skill Kit and custom NLP models."
     ]
   }
 ];
+
+const skillGroups = [
+  {
+    title: "Generative AI & LLMs",
+    items: [
+      "OpenAI (GPT-4, Codex)",
+      "Anthropic",
+      "Gemini",
+      "LangChain",
+      "LangGraph",
+      "Agentic Workflows",
+      "Prompt Engineering",
+      "HuggingFace"
+    ]
+  },
+  {
+    title: "Vector Databases",
+    items: ["Milvus", "Qdrant"]
+  },
+  {
+    title: "Programming & Frameworks",
+    items: ["Python", "FastAPI", "Flask", "React", "TypeScript", "SQL", "Statistics"]
+  },
+  {
+    title: "Machine Learning & NLP",
+    items: [
+      "XGBoost",
+      "Scikit-Learn",
+      "NLTK",
+      "SpaCy",
+      "Topic Modelling",
+      "Pandas",
+      "NumPy"
+    ]
+  },
+  {
+    title: "Cloud & Infrastructure",
+    items: [
+      "AWS ECS",
+      "OpenSearch",
+      "Lambda",
+      "SageMaker",
+      "S3",
+      "DynamoDB",
+      "API Gateway",
+      "Docker"
+    ]
+  },
+  {
+    title: "Developer & AI Coding Tools",
+    items: ["Cursor", "GitHub Copilot", "Claude Code", "Postman", "Git"]
+  },
+  {
+    title: "Data Visualization",
+    items: ["Seaborn", "Tableau", "Matplotlib", "Plotly"]
+  }
+];
+
+const education = {
+  degree: "Bachelor of Engineering",
+  school: "Savitribai Phule Pune University, Pune",
+  period: "June 2015 – June 2019",
+  detail: "CGPA: 7.15/10 (First Class)"
+};
+
+const certifications = {
+  items: ["Tableau Desktop Professional"],
+  languages: ["English", "Hindi", "Marathi"]
+};
 
 const writingItems = [
   {
@@ -353,7 +447,7 @@ export default function Home() {
                     Prajwal Gotmare
                   </h1>
                   <p className="mt-3 text-xl font-medium leading-7 text-slate-700">
-                    AI Engineer · LLM Systems · Production ML
+                    Senior AI Engineer · LLM Systems · Production ML
                   </p>
 
                   <div className="mt-4 flex items-center gap-3">
@@ -374,10 +468,10 @@ export default function Home() {
 
                   <p className="body-primary mt-4 max-w-2xl">
                     <span className="block">
-                      I build LLM systems that ship to production.
+                      I design and ship production LLM apps, agentic workflows, RAG, and NLP systems.
                     </span>
                     <span className="mt-1 block text-slate-500">
-                      Pipelines · Forecasting · AI Platforms · AWS
+                      Cloud-native AI across ecommerce, healthcare, life sciences, and supply chain.
                     </span>
                   </p>
 
@@ -530,6 +624,99 @@ export default function Home() {
         </section>
 
         <section
+          id="skills"
+          className="mx-auto max-w-6xl px-6 pt-16 lg:px-8 lg:pt-20"
+        >
+          <div className="section-card p-8 sm:p-10 lg:p-12">
+            <Reveal>
+              <div className="flex flex-col gap-4">
+                <p className="eyebrow">Skills</p>
+                <h2 className="section-title">
+                  Tools I use to ship production AI
+                </h2>
+                <p className="body-primary max-w-3xl">
+                  Generative AI, ML, cloud, and product engineering stack from the resume.
+                </p>
+              </div>
+            </Reveal>
+
+            <div className="mt-10 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+              {skillGroups.map((group, index) => (
+                <Reveal key={group.title} delay={index * 60}>
+                  <div className="h-full rounded-[1.5rem] border border-slate-200 bg-white p-5 shadow-soft sm:p-6">
+                    <p className="meta-label text-blue-600">{group.title}</p>
+                    <div className="mt-4 flex flex-wrap gap-2">
+                      {group.items.map((item) => (
+                        <span key={item} className="meta-pill">
+                          {item}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section
+          id="education"
+          className="mx-auto max-w-6xl px-6 pt-16 lg:px-8 lg:pt-20"
+        >
+          <div className="section-card p-8 sm:p-10 lg:p-12">
+            <Reveal>
+              <div className="flex flex-col gap-4">
+                <p className="eyebrow">Education & Certifications</p>
+                <h2 className="section-title">
+                  Background and credentials
+                </h2>
+              </div>
+            </Reveal>
+
+            <div className="mt-10 grid gap-6 lg:grid-cols-2">
+              <Reveal direction="left">
+                <div className="h-full rounded-[1.5rem] border border-slate-200 bg-white p-6 shadow-soft sm:p-7">
+                  <p className="meta-label">Education</p>
+                  <h3 className="card-title mt-4">{education.degree}</h3>
+                  <p className="body-primary mt-3">{education.school}</p>
+                  <p className="meta-text mt-2">{education.period}</p>
+                  <p className="body-secondary mt-3">{education.detail}</p>
+                </div>
+              </Reveal>
+
+              <Reveal direction="right" delay={80}>
+                <div className="h-full rounded-[1.5rem] border border-slate-200 bg-white p-6 shadow-soft sm:p-7">
+                  <p className="meta-label">Certifications & Languages</p>
+                  <div className="mt-4 space-y-5">
+                    <div>
+                      <p className="text-sm font-medium text-slate-500">
+                        Certifications
+                      </p>
+                      <div className="mt-3 flex flex-wrap gap-2">
+                        {certifications.items.map((item) => (
+                          <span key={item} className="meta-pill">
+                            {item}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                    <div>
+                      <p className="text-sm font-medium text-slate-500">
+                        Languages
+                      </p>
+                      <p className="body-primary mt-2">
+                        {certifications.languages.join(", ")} — Full Professional
+                        Proficiency
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </Reveal>
+            </div>
+          </div>
+        </section>
+
+        <section
           id="projects"
           className="mx-auto max-w-6xl px-6 pt-16 lg:px-8 lg:pt-20"
         >
@@ -540,12 +727,12 @@ export default function Home() {
                   Case studies from production AI systems
                 </h2>
                 <p className="body-primary max-w-3xl">
-                  Three projects: problem, build, impact.
+                  Four projects: problem, build, impact.
                 </p>
               </div>
             </Reveal>
 
-          <div className="mt-8 grid gap-6 lg:grid-cols-3">
+          <div className="mt-8 grid gap-6 md:grid-cols-2">
             {projects.map((project, index) => (
               <Reveal key={project.title} className="h-full" delay={index * 90}>
                 <ProjectCard {...project} />
