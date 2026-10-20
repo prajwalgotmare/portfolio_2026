@@ -8,7 +8,7 @@ const links = [
 ];
 
 const resumeHref =
-  "https://drive.google.com/file/d/1tIJb7_NcfXfKQ4lcL6jfjru9HxmWSD_3/view?usp=sharing";
+  "/documents/Prajwal_Gotmare_Resume_Updated.pdf";
 
 export default function Navbar() {
   return (

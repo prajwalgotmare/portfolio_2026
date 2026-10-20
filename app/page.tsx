@@ -33,8 +33,8 @@ const highlights = [
   },
   {
     kicker: "Impact",
-    value: "26k+ products · +15% accuracy",
-    label: "Across SEO, forecasting, and data pipelines",
+    value: "25,000+ products indexed",
+    label: "Production RAG, SEO, forecasting, and data pipelines",
     valueClassName: "card-title"
   }
 ];
@@ -58,95 +58,246 @@ const heroLinks = [
 
 const projects = [
   {
-    title: "Clinical Trials Data Pipeline",
-    company: "AIThinkers x Decentrialz",
-    problem:
-      "ClinicalTrials.gov data was hard to ingest, normalize, and search at scale.",
-    built:
-      "Built an AWS pipeline with AI-assisted condition normalization, therapeutic classification, and eligibility extraction.",
-    impact:
-      "Delivered cleaner trial data and faster retrieval in production.",
-    stack: [
+    "title": "Business Brain — Governed Operations Copilot",
+    "company": "Personal Project",
+    "problem": "Business questions require tenant-aware analytics, cited document search, and controlled draft approvals.",
+    "built": "Built a Python/FastAPI and LangGraph copilot on mostly synthetic data, with tenant and role checks across fixed SQL and 5 read-only MCP tools. Loaded 9,392 synthetic rows across 23 tenant-scoped tables. Indexed 10 synthetic PDFs into 49 clause-aware chunks using bge-small embeddings, Qdrant BM25, RRF fusion, reranking, and citations.",
+    "impact": "Ran a 50-case synthetic evaluation: 96.9% Ragas Faithfulness across 8 judged document answers. Passed 21 synthetic adversarial cases covering tenant leakage, privilege escalation, and prompt injection. External actions remain disabled.",
+    "stack": [
       "Python",
+      "FastAPI",
+      "LangGraph",
+      "MCP",
+      "Qdrant",
+      "Groq",
+      "Neon/PostgreSQL",
+      "Auth0",
+      "Langfuse",
+      "Vercel",
+      "Ragas"
+    ],
+    "links": []
+  },
+  {
+    "title": "Virginia Tile — Ignite SEO AI Platform",
+    "company": "AIThinkers",
+    "problem": "Product descriptions, FAQs, and product search needed to scale with review and publishing controls.",
+    "built": "Built with React 18, TypeScript, FastAPI, MySQL, OpenAI GPT-4o-mini, and Gemini 2.5 Flash Lite. Generated content from metadata and technical PDFs; implemented a Milvus RAG chatbot indexing 25,000+ products. Added AWS Cognito authentication across 3 roles, real-time edit locks with heartbeats, takeovers, timeouts and SSE notifications, version tracking, feedback, likes, and Salsify publishing.",
+    "impact": "Evaluated readability, grammar, plagiarism indicators, and AI-written likelihood, with a consensus workflow requiring 50%+ reviewer approval.",
+    "stack": [
+      "React 18",
+      "TypeScript",
+      "FastAPI",
+      "MySQL",
+      "OpenAI",
+      "Gemini",
+      "Milvus",
+      "AWS Cognito",
+      "Salsify"
+    ],
+    "links": [
+      {
+        "label": "Virginia Tile",
+        "href": "https://virginiatile.com/"
+      }
+    ]
+  },
+  {
+    "title": "DCT Clinical Trials Data Pipeline",
+    "company": "AIThinkers × Decentralz",
+    "problem": "ClinicalTrials.gov data needed ingestion, enrichment, indexing, and traceable validation.",
+    "built": "Designed a Docker-based distributed pipeline across API Gateway, Lambda, ECS Fargate, SQS, S3, DynamoDB, OpenSearch, Valkey, and CloudWatch. Processed configurable batches (500 records by default) through condition enrichment, location normalization, trial indexing, and therapeutic-area aggregation.",
+    "impact": "Added 3 parallel QA workflows with a configurable 90% pass threshold, isolated run-specific and global indices with fine-grained access control, REST run/status APIs, DynamoDB locks, queue checks, retries, error aggregation, and PDF/CSV QA evidence in S3.",
+    "stack": [
+      "Docker",
       "API Gateway",
       "Lambda",
-      "ECS",
+      "ECS Fargate",
+      "SQS",
       "S3",
       "DynamoDB",
-      "OpenSearch"
+      "OpenSearch",
+      "Valkey",
+      "CloudWatch"
     ],
-    links: [
+    "links": [
       {
-        label: "ClinicalTrials.gov",
-        href: "https://clinicaltrials.gov/"
+        "label": "ClinicalTrials.gov",
+        "href": "https://clinicaltrials.gov/"
+      }
+    ]
+  },
+  {
+    "title": "Marysville Marine Demand Forecasting",
+    "company": "Klizer (DCKAP)",
+    "problem": "A marine-parts business needed demand visibility and inventory planning across 5 websites and approximately 162,000 products.",
+    "built": "Forecasted the top 1,000–10,000 SKUs over 4–8 week horizons using 2011–2025 sales, inventory, and supplier data. Benchmarked TimesNet, TimeMixer, PatchTST, Amazon Chronos/Bolt, and TabPFN with holiday/weekend features. Built Epicor P21 + Magento → Airbyte → BigQuery → ETL → forecasting and FastAPI demand, inventory, and OpenAI conversational endpoints.",
+    "impact": "Delivered stock availability, days-of-stock, turnover, safety-stock, and reorder-point analytics for supply-chain decisions.",
+    "stack": [
+      "Python",
+      "TimesNet",
+      "TimeMixer",
+      "PatchTST",
+      "Amazon Chronos/Bolt",
+      "TabPFN",
+      "Airbyte",
+      "BigQuery",
+      "FastAPI",
+      "OpenAI"
+    ],
+    "links": [
+      {
+        "label": "Marysville Marine",
+        "href": "https://marysvillemarine.com/"
       },
       {
-        label: "Decentrialz",
-        href: "https://decentrialz.com"
+        "label": "Klizer",
+        "href": "https://www.klizer.com/"
       }
     ]
   },
   {
-    title: "AI SEO Platform",
-    company: "Virginia Tile · AIThinkers",
-    problem:
-      "26k+ products needed SEO descriptions and FAQs without manual bottlenecks.",
-    built:
-      "Built a FastAPI + React/TypeScript platform with OpenAI generation and Gemini quality scoring.",
-    impact:
-      "Scaled consistent product and FAQ content across the catalog on AWS.",
-    stack: ["Python", "FastAPI", "React", "TypeScript", "OpenAI", "Gemini", "AWS"],
-    links: [
-      {
-        label: "Virginia Tile",
-        href: "https://virginiatile.com/"
-      }
-    ]
+    "title": "Sanskrit Teaching Platform — Aanantya",
+    "company": "Techno Exponent",
+    "problem": "Sanskrit learners needed conversational tutoring accessible to a global audience.",
+    "built": "Built an interactive Sanskrit-learning chatbot with Python and the OpenAI API.",
+    "impact": "Enabled conversation in 15+ global languages, expanding accessibility and user acquisition.",
+    "stack": [
+      "Python",
+      "OpenAI API",
+      "NLP"
+    ],
+    "links": []
   },
   {
-    title: "Demand Forecasting System",
-    company: "Klizer x Marysville Marine",
-    problem:
-      "1000+ SKUs lacked unified demand visibility across ERP and ecommerce.",
-    built:
-      "Built SageMaker XGBoost forecasting with Airbyte ETL from Prophet21 and Magento into PostgreSQL, plus FastAPI KPIs and an OpenAI supply-chain chatbot.",
-    impact:
-      "+10–15% forecast accuracy and stronger inventory decisions.",
-    stack: ["XGBoost", "SageMaker", "Airbyte", "PostgreSQL", "FastAPI", "OpenAI"],
-    links: [
-      {
-        label: "Marysville Marine",
-        href: "https://marysvillemarine.com/"
-      },
-      {
-        label: "Klizer",
-        href: "https://www.klizer.com/"
-      }
-    ]
+    "title": "Caller Support Bot",
+    "company": "Techno Exponent",
+    "problem": "Service businesses needed voice-based customer support and automated appointment booking.",
+    "built": "Built a voice support bot with Python, MySQL, OpenAI API, LangChain, and gTTS.",
+    "impact": "Tailored appointment-booking conversations for hospitals, barbershops, and other service businesses.",
+    "stack": [
+      "Python",
+      "MySQL",
+      "OpenAI API",
+      "LangChain",
+      "gTTS"
+    ],
+    "links": []
   },
   {
-    title: "Sanskrit Teaching Platform",
-    company: "Aanantya · Techno Exponent",
-    problem:
-      "Learners needed conversational Sanskrit tutoring beyond static lessons.",
-    built:
-      "Engineered an OpenAI-powered tutoring chatbot in Python for conversational learning.",
-    impact:
-      "Enabled tutoring across 15+ languages and boosted engagement and accessibility.",
-    stack: ["Python", "OpenAI", "NLP"],
-    links: [
-      {
-        label: "Techno Exponent",
-        href: "https://www.technoexponent.com/"
-      }
-    ]
+    "title": "AI-Powered Legal Decision-Support Platform",
+    "company": "Independent Consulting × Mosu Tech",
+    "problem": "Legal disputes involved uncertainty around cost, resolution time, success probability, and lawyer selection.",
+    "built": "Built cost, timeframe, and outcome/settlement prediction engines exposed through Flask REST APIs for litigation, arbitration, and mediation. Recommended lawyers by expertise, location, practice area, language, and budget.",
+    "impact": "Processed 640+ lawyer records and 100+ court-case records. Benchmarked Random Forest, LightGBM, SVR, KNN, Decision Trees, and neural networks, achieving up to 0.49 R².",
+    "stack": [
+      "Python",
+      "Flask",
+      "REST APIs",
+      "Random Forest",
+      "LightGBM",
+      "SVR",
+      "KNN",
+      "Decision Trees",
+      "Neural Networks"
+    ],
+    "links": []
+  },
+  {
+    "title": "Alexa Skill for the Shipping Industry",
+    "company": "Shyena Tech Yarns",
+    "problem": "Shipping users needed freight rates through natural voice commands.",
+    "built": "Built an Alexa skill with Alexa Skill Kit and NLP to interpret voice commands and retrieve container freight rates.",
+    "impact": "Increased user engagement by 25% within 3 months of launch.",
+    "stack": [
+      "Alexa Skill Kit",
+      "NLP",
+      "Machine Learning"
+    ],
+    "links": []
+  },
+  {
+    "title": "Intelligent Invoice Data Extraction",
+    "company": "Shyena Tech Yarns",
+    "problem": "Invoices, receipts, and multi-page PDFs needed conversion into structured data.",
+    "built": "Built Document AI and OCR pipelines with EasyOCR, OpenCV, TensorFlow Object Detection, and PyTorch for vendor names, dates, invoice numbers, and tabular data.",
+    "impact": "Processed 362 PDFs (including 60 multi-page PDFs), 118 labelled invoice images, 10,800+ XML annotations, and approximately 12,000 document images. Exported CSV, JSON, and Excel outputs.",
+    "stack": [
+      "EasyOCR",
+      "OpenCV",
+      "TensorFlow Object Detection",
+      "PyTorch",
+      "OCR",
+      "Document AI"
+    ],
+    "links": []
+  },
+  {
+    "title": "Legal Contract Question-Answering System",
+    "company": "Shyena Tech Yarns",
+    "problem": "Long legal contracts needed searchable answers and key-clause extraction.",
+    "built": "Fine-tuned RoBERTa QA models on CUAD using CUAD/SQuAD-compatible formats, with tokenisation, answer-span prediction, and confidence scoring.",
+    "impact": "Used 510 contracts and 20,910 question-answer pairs; tested across 41 legal-question categories.",
+    "stack": [
+      "RoBERTa",
+      "CUAD",
+      "SQuAD",
+      "Transformers",
+      "NLP"
+    ],
+    "links": []
+  },
+  {
+    "title": "Grocery Recommendation & Multilingual Search API",
+    "company": "Shyena Tech Yarns",
+    "problem": "Grocery shoppers needed relevant recommendations and multilingual product discovery.",
+    "built": "Built a Flask recommendation and product-search API integrating Elasticsearch, MongoDB, SQL Server, and JWT authentication.",
+    "impact": "Powered recommendations and multilingual search from 23,053 grocery transactions.",
+    "stack": [
+      "Flask",
+      "Elasticsearch",
+      "MongoDB",
+      "SQL Server",
+      "JWT",
+      "Multilingual Search"
+    ],
+    "links": []
+  },
+  {
+    "title": "Adibuja PySpark Personalisation Engine",
+    "company": "Shyena Tech Yarns",
+    "problem": "An ecommerce platform needed personalised category and subcategory recommendations.",
+    "built": "Built a personalisation engine using PySpark, Spark SQL, and window functions.",
+    "impact": "Generated category and subcategory recommendations from 30,896 records.",
+    "stack": [
+      "PySpark",
+      "Spark SQL",
+      "Window Functions",
+      "Personalisation"
+    ],
+    "links": []
+  },
+  {
+    "title": "Rasa Voice and HR Chatbot",
+    "company": "Shyena Tech Yarns",
+    "problem": "HR and loan workflows needed conversational support and ongoing employee feedback.",
+    "built": "Built a Rasa assistant with custom actions and a Flask interface, then extended it into an Employee Engagement Bot.",
+    "impact": "Ran 25 employee surveys over 100 days.",
+    "stack": [
+      "Rasa",
+      "Python",
+      "Flask",
+      "Custom Actions",
+      "Voice Assistants"
+    ],
+    "links": []
   }
 ];
 
 const experience = [
   {
     yearLabel: "2025 - 2026",
-    period: "June 2025 - June 2026",
+    period: "July 2025 - June 2026",
     role: "Senior Data Scientist",
     company: "AIThinkers",
     companyHref: "https://www.aithinkers.com/",
@@ -154,7 +305,7 @@ const experience = [
     logoAlt: "AIThinkers logo",
     logoFrameClassName: "h-16 w-16",
     points: [
-      "Built an AI SEO content platform for Virginia Tile (FastAPI, React/TypeScript, OpenAI, Gemini) processing 26k+ products on AWS.",
+      "Built Virginia Tile’s Ignite SEO AI platform and a Milvus RAG chatbot indexing 25,000+ products, with content evaluation, reviewer approvals, real-time editing, and publishing workflows.",
       "Designed a ClinicalTrials.gov AWS pipeline (API Gateway, Lambda, ECS, S3, DynamoDB, OpenSearch) with AI-assisted enrichment."
     ]
   },
@@ -168,8 +319,8 @@ const experience = [
     logoAlt: "Klizer logo",
     logoFrameClassName: "h-14 w-14",
     points: [
-      "Built demand forecasting for 1000+ SKUs on SageMaker with XGBoost, improving forecast accuracy by 10–15%.",
-      "Shipped Airbyte ETL (Prophet21, Magento → PostgreSQL), FastAPI inventory KPIs, and an OpenAI supply-chain chatbot."
+      "Forecasted 1,000–10,000 SKUs over 4–8 week horizons for approximately 162,000 products across 5 Marysville websites; benchmarked modern forecasting architectures.",
+      "Built Epicor P21 + Magento → Airbyte → BigQuery data pipelines, FastAPI inventory analytics, and OpenAI-powered conversational endpoints."
     ]
   },
   {
@@ -183,7 +334,21 @@ const experience = [
     logoFrameClassName: "h-14 w-14",
     points: [
       "Built an AI Sanskrit tutoring chatbot (Aanantya) with the OpenAI API and Python.",
-      "Enabled conversational learning across 15+ languages and improved global accessibility."
+      "Enabled conversational learning across 15+ languages; built a voice-based appointment-booking bot with MySQL, LangChain, and gTTS."
+    ]
+  },
+  {
+    yearLabel: "2022 - 2023",
+    period: "November 2022 - April 2023",
+    role: "Independent AI Consultant",
+    company: "Freelance · Mosu Tech",
+    companyHref: "",
+    logo: "",
+    logoAlt: "Independent consulting",
+    logoFrameClassName: "h-14 w-14",
+    points: [
+      "Built legal decision-support prediction engines and Flask APIs for litigation, arbitration, and mediation, plus a lawyer-recommendation engine.",
+      "Processed 640+ lawyer records and 100+ court cases; benchmarked ML models with up to 0.49 R²."
     ]
   },
   {
@@ -197,72 +362,161 @@ const experience = [
     logoFrameClassName: "h-11 w-24",
     points: [
       "Developed an Alexa skill for shipping that delivered container freight rates using NLP and ML.",
-      "Increased user engagement by 25% in three months with Alexa Skill Kit and custom NLP models."
+      "Increased user engagement by 25% in three months with Alexa Skill Kit and custom NLP models.",
+      "Delivered invoice OCR, RoBERTa legal contract QA, grocery recommendations and multilingual search, a PySpark personalisation engine, and Rasa HR and voice assistants."
+    ]
+  },
+  {
+    yearLabel: "2019 - 2021",
+    period: "June 2019 - August 2021",
+    role: "Quantitative Technical Instructor & Subject Matter Expert",
+    company: "Freelance / Independent",
+    companyHref: "",
+    logo: "",
+    logoAlt: "Independent instruction",
+    logoFrameClassName: "h-14 w-14",
+    points: [
+      "Delivered online instruction in Engineering Mechanics and Energy Engineering, mentoring 50+ undergraduate students in quantitative analysis and complex problem-solving.",
+      "Applied university distinction as Energy Engineering Subject Topper to technical instruction."
     ]
   }
 ];
 
 const skillGroups = [
   {
-    title: "Generative AI & LLMs",
-    items: [
-      "OpenAI (GPT-4, Codex)",
-      "Anthropic",
+    "title": "Programming & Backend",
+    "items": [
+      "Python",
+      "SQL",
+      "FastAPI",
+      "Flask",
+      "REST API Development",
+      "JWT Authentication",
+      "Role-Based Access Control"
+    ]
+  },
+  {
+    "title": "Machine Learning & NLP",
+    "items": [
+      "scikit-learn",
+      "XGBoost",
+      "LightGBM",
+      "PyTorch",
+      "TensorFlow",
+      "Hugging Face",
+      "Pandas",
+      "NumPy",
+      "spaCy",
+      "NLTK",
+      "Demand Forecasting",
+      "Time-Series Modeling",
+      "Model Benchmarking",
+      "Transformer-based Question Answering",
+      "Topic Modelling",
+      "Statistics"
+    ]
+  },
+  {
+    "title": "Generative AI & Agent Frameworks",
+    "items": [
+      "OpenAI APIs",
       "Gemini",
+      "Anthropic Claude",
       "LangChain",
       "LangGraph",
-      "Agentic Workflows",
+      "MCP",
+      "RAG Pipelines",
+      "Agentic AI",
+      "Tool Calling",
+      "Structured Outputs",
       "Prompt Engineering",
-      "HuggingFace"
+      "LLM Fine-tuning",
+      "LoRA",
+      "QLoRA",
+      "Human-in-the-Loop Approvals"
     ]
   },
   {
-    title: "Vector Databases",
-    items: ["Milvus", "Qdrant"]
-  },
-  {
-    title: "Programming & Frameworks",
-    items: ["Python", "FastAPI", "Flask", "React", "TypeScript", "SQL", "Statistics"]
-  },
-  {
-    title: "Machine Learning & NLP",
-    items: [
-      "XGBoost",
-      "Scikit-Learn",
-      "NLTK",
-      "SpaCy",
-      "Topic Modelling",
-      "Pandas",
-      "NumPy"
+    "title": "LLM Evaluation, Safety & Observability",
+    "items": [
+      "Ragas",
+      "Langfuse",
+      "Prompt-Injection Testing",
+      "Tenant Isolation",
+      "Adversarial Testing"
     ]
   },
   {
-    title: "Cloud & Infrastructure",
-    items: [
-      "AWS ECS",
+    "title": "Data Engineering & Retrieval",
+    "items": [
+      "PySpark",
+      "Spark SQL",
+      "BigQuery",
+      "Airbyte",
+      "Qdrant",
+      "Milvus",
+      "Hybrid Retrieval",
+      "Reranking",
+      "Elasticsearch",
       "OpenSearch",
-      "Lambda",
-      "SageMaker",
-      "S3",
-      "DynamoDB",
-      "API Gateway",
-      "Docker"
+      "PostgreSQL",
+      "MySQL",
+      "MongoDB"
     ]
   },
   {
-    title: "Developer & AI Coding Tools",
-    items: ["Cursor", "GitHub Copilot", "Claude Code", "Postman", "Git"]
+    "title": "Cloud & Deployment",
+    "items": [
+      "Docker",
+      "AWS Lambda",
+      "AWS ECS/Fargate",
+      "AWS S3",
+      "AWS DynamoDB",
+      "AWS SQS",
+      "AWS API Gateway",
+      "AWS Cognito",
+      "AWS CloudWatch",
+      "AWS SageMaker",
+      "AWS CDK",
+      "Azure AI"
+    ]
   },
   {
-    title: "Data Visualization",
-    items: ["Seaborn", "Tableau", "Matplotlib", "Plotly"]
+    "title": "Document AI & Computer Vision",
+    "items": [
+      "OCR",
+      "Document Information Extraction",
+      "OpenCV",
+      "EasyOCR"
+    ]
+  },
+  {
+    "title": "Frontend & Developer Tools",
+    "items": [
+      "React",
+      "TypeScript",
+      "Claude Code",
+      "Cursor",
+      "GitHub Copilot",
+      "Postman",
+      "Git"
+    ]
+  },
+  {
+    "title": "Data Visualization",
+    "items": [
+      "Seaborn",
+      "Tableau",
+      "Matplotlib",
+      "Plotly"
+    ]
   }
 ];
 
 const education = {
   degree: "Bachelor of Engineering",
   school: "Savitribai Phule Pune University, Pune",
-  period: "June 2015 – June 2019",
+  period: "June 2015 – August 2019",
   detail: "CGPA: 7.15/10 (First Class)"
 };
 
@@ -360,13 +614,13 @@ function ExperienceLogo({ item }: { item: ExperienceItem }) {
     <div className="flex justify-center">
       <div className="relative z-10 flex h-24 w-24 items-center justify-center rounded-[1.5rem] border border-slate-200 bg-white p-3 shadow-soft lg:h-28 lg:w-28 lg:p-4">
         <div className={`relative ${item.logoFrameClassName}`}>
-          <Image
+          {item.logo ? <Image
             src={item.logo}
             alt={item.logoAlt}
             fill
             sizes="(min-width: 1024px) 112px, 96px"
             className="object-contain"
-          />
+          /> : <span className="flex h-full items-center justify-center text-lg font-semibold text-blue-600" aria-label={item.logoAlt}>PG</span>}
         </div>
       </div>
     </div>
@@ -404,14 +658,14 @@ function ExperienceDetails({
 
       <p className={`${showYear ? "mt-3" : ""} text-xl font-semibold leading-7 text-slate-950`}>
         {item.role} at{" "}
-        <a
+        {item.companyHref ? <a
           href={item.companyHref}
           target="_blank"
           rel="noreferrer noopener"
           className="text-blue-600 transition hover:text-blue-700"
         >
           {item.company}
-        </a>
+        </a> : <span className="text-blue-600">{item.company}</span>}
       </p>
 
       <p className="meta-text mt-2">{item.period}</p>
@@ -471,7 +725,7 @@ export default function Home() {
                       I design and ship production LLM apps, agentic workflows, RAG, and NLP systems.
                     </span>
                     <span className="mt-1 block text-slate-500">
-                      Cloud-native AI across ecommerce, healthcare, life sciences, and supply chain.
+                      Secure, tenant-aware AI with hybrid retrieval, reranking, human approvals, Ragas evaluation, and Langfuse tracing.
                     </span>
                   </p>
 
@@ -722,12 +976,12 @@ export default function Home() {
         >
           <Reveal>
             <div className="flex flex-col gap-4">
-              <p className="eyebrow">Selected Projects</p>
+              <p className="eyebrow">Projects</p>
                 <h2 className="section-title">
                   Case studies from production AI systems
                 </h2>
                 <p className="body-primary max-w-3xl">
-                  Four projects: problem, build, impact.
+                  Production work and personal projects across agentic AI, RAG, forecasting, NLP, and Document AI.
                 </p>
               </div>
             </Reveal>
